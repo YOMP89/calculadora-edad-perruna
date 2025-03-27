@@ -18,7 +18,25 @@
         <div id="result" class="result"></div>
         <div id="error" class="error"></div>
     </div>
+<script>
+        function calculateDogAge() {
+            const humanAgeInput = document.getElementById('humanAge').value;
+            const resultDiv = document.getElementById('result');
+            const errorDiv = document.getElementById('error');
+            
+            errorDiv.textContent = '';
+            
+            if (!humanAgeInput || isNaN(humanAgeInput) || humanAgeInput < 0) {
+                errorDiv.textContent = 'Por favor ingresa una edad válida';
+                return;
+            }
 
+            const humanAge = parseInt(humanAgeInput);
+            const dogAge = humanAge * 7;
+            
+            resultDiv.innerHTML = `La edad de tu perro es: <strong>${dogAge}</strong> años perrunos 🐾`;
+        }
+    </script>
     
 </body>
 </html>
